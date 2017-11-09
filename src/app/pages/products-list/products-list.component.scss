@@ -1,11 +1,16 @@
 @import '../../vars';
 @import '../../../theme';
 
+:host {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 1;
-  padding: 20px;
 }
 
 .card {
