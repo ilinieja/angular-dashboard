@@ -1,0 +1,15 @@
+html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

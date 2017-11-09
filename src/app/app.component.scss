@@ -1,0 +1,10 @@
+@import './vars';
+
+:host {
+  display: flex;
+  flex-grow: 1;
+
+  &.header-visible {
+    padding-top: $header-height;
+  }
+}

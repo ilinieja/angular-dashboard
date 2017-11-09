@@ -1,0 +1,89 @@
+<div class="overlay"></div>
+<div class="logo">
+</div>
+
+<mat-card class="form">
+  <form
+    [formGroup]="loginForm"
+    *ngIf="loginForm"
+    (ngSubmit)="onLoginSubmit()"
+    novalidate
+  >
+    <mat-input-container>
+      <input matInput placeholder="Email" formControlName="username">
+      <mat-error *ngIf="loginForm.controls.username.hasError('pattern')">
+        Invalid email
+      </mat-error>
+      <mat-error *ngIf="loginForm.controls.username.hasError('required')">
+        Required
+      </mat-error>
+    </mat-input-container>
+    <mat-input-container>
+      <input matInput placeholder="Password" formControlName="password" type="password">
+      <mat-error *ngIf="loginForm.controls.password.hasError('required')">
+        Required
+      </mat-error>
+    </mat-input-container>
+    <div class="controls">
+      <div class="account-question">
+        <span>No account?</span>
+        <button type="button" (click)="constructSignupForm()" class="signup-toggle">Sign Up</button>
+      </div>
+      <button mat-raised-button [disabled]="loginForm.invalid" color="primary">Log In</button>
+    </div>
+  </form>
+
+  <form [formGroup]="signupForm"
+        *ngIf="signupForm"
+        (ngSubmit)="onSignupSubmit()"
+        novalidate
+  >
+    <mat-input-container>
+      <input matInput placeholder="Given name" formControlName="firstName">
+      <mat-error *ngIf="signupForm.controls.firstName.hasError('required')">
+        Required
+      </mat-error>
+    </mat-input-container>
+    <mat-input-container>
+      <input matInput placeholder="Family name" formControlName="lastName">
+      <mat-error *ngIf="signupForm.controls.lastName.hasError('required')">
+        Required
+      </mat-error>
+    </mat-input-container>
+    <mat-input-container>
+      <input matInput placeholder="Email" formControlName="username">
+      <mat-error *ngIf="signupForm.controls.username.hasError('pattern')">
+        Invalid email
+      </mat-error>
+      <mat-error *ngIf="signupForm.controls.username.hasError('required')">
+        Required
+      </mat-error>
+    </mat-input-container>
+    <mat-input-container>
+      <input matInput placeholder="Password" formControlName="password" type="password">
+      <mat-error *ngIf="signupForm.controls.password.hasError('required')">
+        Required
+      </mat-error>
+    </mat-input-container>
+    <div class="controls">
+      <div class="account-question">
+        <span>Have an account?</span>
+        <button type="button" (click)="constructLoginForm()" class="signup-toggle">Log In</button>
+      </div>
+      <button mat-raised-button [disabled]="signupForm.invalid" color="primary">Sign Up</button>
+    </div>
+  </form>
+</mat-card>
+
+<div class="content">
+  <h1 class="title">Angular dashboard starter</h1>
+  <h1 class="slogan">Slogan</h1>
+  <a
+    mat-raised-button
+    color="accent"
+    class="learn-more"
+    target="_blank"
+    href=""
+  >Learn more
+  </a>
+</div>

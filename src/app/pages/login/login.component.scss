@@ -1,0 +1,155 @@
+@import '../../../theme.scss';
+
+:host {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  background: url(../../../assets/login-bg.jpg);
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  padding: 0 140px 0 40px;
+}
+
+.overlay {
+  display: block;
+  height: 100%;
+  width: 1000px;
+  background: map-get($mat-grey, 100);
+  transform: skewX(-15deg);
+  position: absolute;
+  right: -700px;
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+
+  svg {
+    color: white;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.content {
+  padding-right: 40px;
+
+  .title, .slogan {
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+    margin-top: 0;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .slogan {
+    font-size: 3rem;
+  }
+
+  .learn-more {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 10px 15px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 350px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    mat-input-container {
+      width: 100%;
+    }
+
+    .controls {
+      margin-top: 30px;
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+
+      .account-question {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .signup-toggle {
+          outline: none;
+          border: none;
+          background: transparent;
+          padding: 0;
+          font-size: 1rem;
+          cursor: pointer;
+          margin-top: 8px;
+          color: map-get($mat-blue, 700);
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      button {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  :host {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 0;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .logo {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 30px;
+  }
+
+  .form {
+    margin-bottom: 50px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+    margin-bottom: 50px;
+
+    .title, .slogan {
+      text-align: center;
+    }
+
+    .slogan {
+      font-size: 3rem;
+      font-weight: 300;
+      color: white;
+      margin-top: 0;
+    }
+  }
+}

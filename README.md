@@ -1,0 +1,14 @@
+# Angular dashboard starter
+Data dashboard frontend with some useful initial setup
+
+## Stack
+* [AngularCLI](https://github.com/angular/angular-cli)
+* [Angular Material](https://material.angular.io/)
+* [Frappe Charts](https://frappe.github.io/charts/)
+* [Mapbox](https://www.mapbox.com/)
+
+## Setup
+* `npm i`
+* `npm run serve` - webpack dev server
+* `npm build` - frontend build for prod
+* `npm start` - start server server from `server.js`

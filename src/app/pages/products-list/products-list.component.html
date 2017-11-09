@@ -1,0 +1,30 @@
+<div class="list">
+  <div class="card mat-elevation-z3" *ngFor="let item of items">
+    <div class="card-image">
+      <div
+        class="card-image"
+        [ngStyle]="{'background-image': 'url(' + item && item.imageUrl + ')'}"
+      ></div>
+    </div>
+    <div class="card-content">
+      <h2 class="card-title">{{item.name}}</h2>
+      <span>${{item.price | number}}</span>
+      <span>Purchased {{item.purchases | number}} times</span>
+      <span>Rating: {{item.rating}}</span>
+    </div>
+    <div class="card-actions">
+      <button
+        class="card-view-button"
+        mat-button
+        color="primary"
+      >VIEW
+      </button>
+      <button
+        class="card-edit-button"
+        mat-button
+        color="primary"
+      >EDIT
+      </button>
+    </div>
+  </div>
+</div>
