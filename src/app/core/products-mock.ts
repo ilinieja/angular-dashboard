@@ -5,6 +5,7 @@ export const products = [
     price: 200,
     purchases: 3000,
     rating: 65,
+    imageUrl: 'assets/ph.jpg',
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const products = [
     price: 200,
     purchases: 3000,
     rating: 65,
+    imageUrl: 'assets/ph1.jpg',
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const products = [
     price: 200,
     purchases: 3000,
     rating: 65,
+    imageUrl: 'assets/ph2.jpg',
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const products = [
     price: 200,
     purchases: 3000,
     rating: 65,
+    imageUrl: 'assets/ph3.jpg',
   },
   {
     id: 5,
@@ -33,5 +37,6 @@ export const products = [
     price: 200,
     purchases: 3000,
     rating: 65,
+    imageUrl: 'assets/ph4.jpg',
   },
 ];

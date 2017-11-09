@@ -1,9 +1,9 @@
 <div class="list">
   <div class="card mat-elevation-z3" *ngFor="let item of items" [routerLink]="['product', item.id]">
-    <div class="card-image">
+    <div class="card-image-container">
       <div
         class="card-image"
-        [ngStyle]="{'background-image': 'url(' + item && item.imageUrl + ')'}"
+        [ngStyle]="{'background-image': 'url(' + item.imageUrl + ')'}"
       ></div>
     </div>
     <div class="card-content">

@@ -54,14 +54,14 @@
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
-    .card-image {
-      .product-image {
+    .card-image-container {
+      .card-image {
         background-size: 140%;
       }
     }
   }
 
-  .card-image {
+  .card-image-container {
     display: flex;
     align-items: center;
     justify-content: center;
