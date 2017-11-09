@@ -1,5 +1,5 @@
 <div class="list">
-  <div class="card mat-elevation-z3" *ngFor="let item of items">
+  <div class="card mat-elevation-z3" *ngFor="let item of items" [routerLink]="['product', item.id]">
     <div class="card-image">
       <div
         class="card-image"
@@ -17,12 +17,14 @@
         class="card-view-button"
         mat-button
         color="primary"
+        [routerLink]="['product', item.id]"
       >VIEW
       </button>
       <button
         class="card-edit-button"
         mat-button
         color="primary"
+        [routerLink]="['product', item.id, 'edit']"
       >EDIT
       </button>
     </div>

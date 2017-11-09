@@ -23,6 +23,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HeaderComponent } from './core/header/header.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
+import { ProductViewComponent } from './pages/product-view/product-view.component';
+import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ProductsListComponent } from './pages/products-list/products-list.compo
     LoginComponent,
     HeaderComponent,
     ProductsListComponent,
+    ProductViewComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,

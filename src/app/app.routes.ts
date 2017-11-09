@@ -5,11 +5,28 @@ import { AuthGuard } from './auth/auth.guard';
 
 import { LoginComponent } from './pages/login/login.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
+import { ProductViewComponent } from './pages/product-view/product-view.component';
+import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ProductsListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'product/new',
+    component: ProductEditComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'product/:id',
+    component: ProductViewComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'product/:id/edit',
+    component: ProductEditComponent,
     canActivate: [AuthGuard],
   },
   {
