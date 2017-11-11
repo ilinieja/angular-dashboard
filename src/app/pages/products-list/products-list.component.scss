@@ -3,7 +3,7 @@
 
 :host {
   width: 100%;
-  padding: 20px;
+  padding: 24px;
   display: flex;
   justify-content: center;
 }
@@ -16,11 +16,11 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 304px;
   min-height: 400px;
   cursor: pointer;
   transition: $common-transition;
-  margin: 0 10px 30px 10px;
+  margin: 0 8px 32px 8px;
   overflow: hidden;
   border-radius: 2px;
 
@@ -39,8 +39,8 @@
     }
 
     .new-icon {
-      width: 100px;
-      height: 100px;
+      width: 104px;
+      height: 104px;
       transition: $common-transition;
     }
 
@@ -83,29 +83,29 @@
   .card-content {
     display: flex;
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 8px 16px;
 
     .card-title {
       font-weight: 400;
-      margin: 10px 0 10px 0;
+      margin: 8px 0 8px 0;
     }
 
     span {
-      margin: 5px 0;
+      margin: 8px 0;
     }
   }
 
   .card-actions {
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 8px 0;
 
     .card-view-button {
       margin-left: auto;
     }
 
     .card-edit-button {
-      margin-right: 10px;
+      margin-right: 8px;
     }
   }
 }
