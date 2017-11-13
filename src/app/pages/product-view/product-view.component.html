@@ -1,3 +1,7 @@
-<p>
-  product-view works!
-</p>
+<h1 class="title">{{product?.name}}</h1>
+<div class="content-row">
+  <div class="card mat-elevation-z3">
+    <h2 class="card-title">Purchases number by source</h2>
+    <app-line-chart [chartData]="chartsData.purchasesBySource"></app-line-chart>
+  </div>
+</div>

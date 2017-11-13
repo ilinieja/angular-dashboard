@@ -1,0 +1,65 @@
+.chart-container {
+  ::ng-deep svg {
+    overflow: visible !important;
+  }
+
+  ::ng-deep * {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  ::ng-deep .c3-axis .tick line,
+  ::ng-deep .c3-axis .domain {
+    display: none;
+  }
+
+  ::ng-deep .c3-axis .tick text,
+  ::ng-deep .c3-legend-item {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  ::ng-deep .c3-grid {
+    opacity: 0.5;
+  }
+
+  ::ng-deep .c3-chart-line {
+    .c3-lines .c3-line,
+    &.c3-focused .c3-lines .c3-line {
+      stroke-width: 3px;
+    }
+
+    .c3-circle {
+      r: 4;
+    }
+  }
+
+  ::ng-deep .c3-xgrid-focus {
+    stroke: black;
+  }
+
+  ::ng-deep .c3-tooltip-container {
+    border-radius: 2px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+
+    .c3-tooltip {
+      opacity: 1;
+
+      tbody tr {
+        border: none;
+
+        th, td {
+          background: white;
+          color: black;
+          font-weight: 300;
+          border: none;
+          padding: 8px;
+
+          &.value {
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}

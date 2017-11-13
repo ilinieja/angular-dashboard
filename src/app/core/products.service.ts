@@ -15,4 +15,14 @@ export class ProductsService {
       observer.next(this.products);
     });
   }
+
+  public getProduct(id): Observable<any> {
+    return new Observable((observer) => {
+      const product = this.products.find((product) => {
+        return product.id = id;
+      });
+
+      observer.next(product || null);
+    });
+  }
 }

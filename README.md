@@ -4,7 +4,7 @@ Data dashboard frontend with some useful initial setup
 ## Stack
 * [AngularCLI](https://github.com/angular/angular-cli)
 * [Angular Material](https://material.angular.io/)
-* [Frappe Charts](https://frappe.github.io/charts/)
+* [c3](http://c3js.org)
 * [Mapbox](https://www.mapbox.com/)
 
 ## Setup

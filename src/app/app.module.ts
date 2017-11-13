@@ -25,6 +25,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { ProductViewComponent } from './pages/product-view/product-view.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { LineChartComponent } from './shared/line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProductEditComponent } from './pages/product-edit/product-edit.componen
     ProductsListComponent,
     ProductViewComponent,
     ProductEditComponent,
+    LineChartComponent,
   ],
   imports: [
     BrowserModule,
