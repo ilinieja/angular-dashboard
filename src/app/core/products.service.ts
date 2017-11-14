@@ -19,7 +19,7 @@ export class ProductsService {
   public getProduct(id): Observable<any> {
     return new Observable((observer) => {
       const product = this.products.find((product) => {
-        return product.id = id;
+        return product.id.toString() === id;
       });
 
       observer.next(product || null);

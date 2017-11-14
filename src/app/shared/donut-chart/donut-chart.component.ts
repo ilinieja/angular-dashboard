@@ -14,11 +14,11 @@ import merge from 'merge';
 import { CHART_COLORS } from '../constants';
 
 @Component({
-  selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html',
-  styleUrls: ['./line-chart.component.scss'],
+  selector: 'app-donut-chart',
+  templateUrl: './donut-chart.component.html',
+  styleUrls: ['./donut-chart.component.scss'],
 })
-export class LineChartComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
+export class DonutChartComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
   public chartElementId: string;
 
   private chart: any;
@@ -46,25 +46,12 @@ export class LineChartComponent implements OnInit, OnChanges, AfterViewInit, OnD
       this.chart = c3.generate(merge.recursive(
         {
           bindto: `#${this.chartElementId}`,
-          axis: {
-            y: {
-              inner: true,
-            },
-            x: {
-              height: 50,
-            },
-          },
-          grid: {
-            y: {
-              show: true,
-            },
-          },
-          legend: {
-            padding: 18,
-          },
           data: {
-            type: 'spline',
+            type: 'donut',
             colors: this.assignColorsToColumns(this.chartData.data.columns),
+          },
+          padding: {
+            bottom: 24,
           },
         },
         this.chartData,

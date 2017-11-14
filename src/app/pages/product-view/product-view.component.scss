@@ -1,4 +1,4 @@
-@import '../../vars';
+@import '../../shared/vars';
 @import '../../../theme';
 
 $host-padding: 24px;
@@ -28,7 +28,6 @@ $card-min-width: 470px;
   flex-grow: 1;
   flex-shrink: 0;
   margin: $card-margin;
-  padding-bottom: 16px;
   display: flex;
   flex-direction: column;
   width: calc(50% - #{$card-margin * 2});
@@ -44,10 +43,28 @@ $card-min-width: 470px;
   .card-content {
     width: 100%;
   }
+
+  &.purchases-by-source {
+    .card-title {
+      padding-left: 12px;
+      padding-bottom: 0;
+    }
+  }
+
+  &.purchases-by-source, &.purchases-by-device {
+    padding-bottom: 16px;
+  }
+
+  &.purchases-by-device {
+    min-width: initial;
+    width: 30%;
+    max-width: 400px;
+    flex-grow: 0;
+  }
 }
 
-@media (max-width: $card-min-width + $host-padding * 2) {
-  .card {
+@media (max-width: $card-min-width * 1.5) {
+  .card, .card.purchases-by-device, .card.reviews {
     min-width: calc(100% - #{$host-padding * 2});
   }
 }

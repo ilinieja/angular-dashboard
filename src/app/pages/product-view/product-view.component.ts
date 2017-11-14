@@ -27,6 +27,7 @@ export class ProductViewComponent implements OnInit {
         },
       },
     },
+    purchasesByDevice: {},
   };
   public chartsData: any = {};
 
@@ -39,9 +40,9 @@ export class ProductViewComponent implements OnInit {
       this.productsService.getProduct(params.id).subscribe((product) => {
         this.product = product;
 
-
         const productChartsData = {
-          purchasesBySource: this.transformPurchasesBySourceData(product.monthlyPurchasesBySource),
+          purchasesBySource: this.transformPurchasesBySourceData(product.monthPurchasesBySource),
+          purchasesByDevice: this.transformPurchasesByDeviceData(product.purchasesByDeviceType),
         };
 
         Object.keys(this.defaultChartsData).forEach((key) => {
@@ -83,6 +84,25 @@ export class ProductViewComponent implements OnInit {
 
       column[0] = initialData[key].label;
       column.push(...initialData[key].data);
+
+      transformedData.data.columns.push(column);
+    });
+
+    return transformedData;
+  }
+
+  private transformPurchasesByDeviceData(initialData) {
+    const transformedData = {
+      data: {
+        columns: [],
+      },
+    };
+
+    Object.keys(initialData).forEach((key) => {
+      const column = [];
+
+      column[0] = initialData[key].label;
+      column.push(initialData[key].data);
 
       transformedData.data.columns.push(column);
     });
