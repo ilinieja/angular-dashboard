@@ -28,6 +28,7 @@ $card-min-width: 470px;
   flex-grow: 1;
   flex-shrink: 0;
   margin: $card-margin;
+  padding-bottom: 16px;
   display: flex;
   flex-direction: column;
   width: calc(50% - #{$card-margin * 2});

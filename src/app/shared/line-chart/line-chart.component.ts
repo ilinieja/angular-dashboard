@@ -38,32 +38,36 @@ export class LineChartComponent implements OnInit, OnChanges, AfterViewInit, OnD
   }
 
   ngAfterViewInit() {
-    this.chart = c3.generate(merge.recursive(
-      {
-        bindto: `#${this.chartElementId}`,
-        axis: {
-          y: {
-            inner: true,
+    // with flex layout, chart container can be not grown on afterViewInit
+    // timeout needed to run init only after flex layout finished
+    setTimeout(() => {
+      this.chart = c3.generate(merge.recursive(
+        {
+          bindto: `#${this.chartElementId}`,
+          axis: {
+            y: {
+              inner: true,
+            },
+            x: {
+              height: 50,
+            },
           },
-          x: {
-            height: 50,
+          grid: {
+            y: {
+              show: true,
+            },
+          },
+          legend: {
+            padding: 20,
+          },
+          data: {
+            type: 'spline',
+            colors: this.assignColorsToColumns(this.chartData.data.columns),
           },
         },
-        grid: {
-          y: {
-            show: true,
-          },
-        },
-        legend: {
-          padding: 20,
-        },
-        data: {
-          type: 'spline',
-          colors: this.assignColorsToColumns(this.chartData.data.columns),
-        },
-      },
-      this.chartData,
-    ));
+        this.chartData,
+      ));
+    });
   }
 
   ngOnDestroy() {
