@@ -37,6 +37,7 @@ export class ProductViewComponent implements OnInit {
         },
       },
     },
+    purchasesByCountry: {},
   };
   public chartsData: any = {};
 
@@ -65,6 +66,7 @@ export class ProductViewComponent implements OnInit {
           purchasesBySource: this.transformTimelineData(product.monthPurchasesBySource),
           purchasesByDevice: this.transformPurchasesByDeviceData(product.purchasesByDeviceType),
           reviews: this.transformTimelineData(product.reviews),
+          purchasesByCountry: Object.assign({}, product.purchasesByCountry),
         };
 
         Object.keys(this.defaultChartsData).forEach((key) => {

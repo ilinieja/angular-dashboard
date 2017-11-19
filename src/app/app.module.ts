@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from '../environments/environment';
 
@@ -28,6 +29,8 @@ import { ProductEditComponent } from './pages/product-edit/product-edit.componen
 import { LineChartComponent } from './shared/line-chart/line-chart.component';
 import { DonutChartComponent } from './shared/donut-chart/donut-chart.component';
 import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
+import { MapComponent } from './shared/map/map.component';
+import { CountriesHeatmapComponent } from './shared/countries-heatmap/countries-heatmap.component';
 
 @NgModule({
   declarations: [
@@ -40,12 +43,15 @@ import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
     LineChartComponent,
     DonutChartComponent,
     BarChartComponent,
+    MapComponent,
+    CountriesHeatmapComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
 
     MatButtonModule,
     MatCardModule,

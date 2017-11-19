@@ -44,6 +44,14 @@ export const products = [
         data: [50, 48, 92, 40, 99, 91, 93, 11, 100, 76, 29, 64],
       },
     },
+    purchasesByCountry: {
+      USA: 1100,
+      FRA: 800,
+      DEU: 700,
+      RUS: 500,
+      SVK: 200,
+      AUS: 100,
+    },
   },
   {
     id: 2,

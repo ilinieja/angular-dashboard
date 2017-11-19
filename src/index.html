@@ -10,6 +10,13 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+<script>
+  // let browser cache geojson data for geo chart, geojson file is rather big,
+  // so good to have it in browser cache before user will init the component that needs it
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("GET", 'https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson', true);
+  xmlHttp.send(null);
+</script>
 <app-root>Loading...</app-root>
 </body>
 </html>
