@@ -5,7 +5,6 @@ import merge from 'merge';
 
 import { ProductsService } from '../../core/products.service';
 
-
 @Component({
   selector: 'app-product-view',
   templateUrl: './product-view.component.html',
@@ -28,8 +27,30 @@ export class ProductViewComponent implements OnInit {
       },
     },
     purchasesByDevice: {},
+    reviews: {
+      data: {
+        x: 'x',
+      },
+      axis: {
+        x: {
+          type: 'category',
+        },
+      },
+    },
   };
   public chartsData: any = {};
+
+  public reviewsChartColors = [
+    '#4FC3F7',
+    '#4FC3F7',
+    '#EC407A',
+  ];
+
+  public deviceChartColors = [
+    '#4DB6AC',
+    '#90A4AE',
+    '#FF8A65',
+  ];
 
   constructor(private route: ActivatedRoute,
               private productsService: ProductsService) {
@@ -41,8 +62,9 @@ export class ProductViewComponent implements OnInit {
         this.product = product;
 
         const productChartsData = {
-          purchasesBySource: this.transformPurchasesBySourceData(product.monthPurchasesBySource),
+          purchasesBySource: this.transformTimelineData(product.monthPurchasesBySource),
           purchasesByDevice: this.transformPurchasesByDeviceData(product.purchasesByDeviceType),
+          reviews: this.transformTimelineData(product.reviews),
         };
 
         Object.keys(this.defaultChartsData).forEach((key) => {
@@ -56,7 +78,7 @@ export class ProductViewComponent implements OnInit {
     });
   }
 
-  private transformPurchasesBySourceData(initialData) {
+  private transformTimelineData(initialData) {
     const transformedData = {
       data: {
         columns: [],

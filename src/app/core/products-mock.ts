@@ -34,6 +34,16 @@ export const products = [
         data: 17,
       },
     },
+    reviews: {
+      positive: {
+        label: 'Positive',
+        data: [68, 22, 57, 27, 58, 95, 94, 52, 71, 82, 72, 84],
+      },
+      negative: {
+        label: 'Negative',
+        data: [50, 48, 92, 40, 99, 91, 93, 11, 100, 76, 29, 64],
+      },
+    },
   },
   {
     id: 2,

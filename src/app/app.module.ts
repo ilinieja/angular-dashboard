@@ -27,6 +27,7 @@ import { ProductViewComponent } from './pages/product-view/product-view.componen
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 import { LineChartComponent } from './shared/line-chart/line-chart.component';
 import { DonutChartComponent } from './shared/donut-chart/donut-chart.component';
+import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DonutChartComponent } from './shared/donut-chart/donut-chart.component'
     ProductEditComponent,
     LineChartComponent,
     DonutChartComponent,
+    BarChartComponent,
   ],
   imports: [
     BrowserModule,

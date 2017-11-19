@@ -22,7 +22,8 @@ export class DonutChartComponent implements OnInit, OnChanges, AfterViewInit, On
   public chartElementId: string;
 
   private chart: any;
-  private defaultColors = CHART_COLORS;
+
+  @Input() private chartColors = CHART_COLORS;
 
   @Input() private chartData: any;
 
@@ -73,7 +74,7 @@ export class DonutChartComponent implements OnInit, OnChanges, AfterViewInit, On
     const colors = {};
 
     columns.forEach((column, index) => {
-      colors[column[0]] = this.defaultColors[index];
+      colors[column[0]] = this.chartColors[index];
     });
 
     return colors;

@@ -14,11 +14,11 @@ import merge from 'merge';
 import { CHART_COLORS } from '../constants';
 
 @Component({
-  selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html',
-  styleUrls: ['./line-chart.component.scss'],
+  selector: 'app-bar-chart',
+  templateUrl: './bar-chart.component.html',
+  styleUrls: ['./bar-chart.component.scss'],
 })
-export class LineChartComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
+export class BarChartComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy  {
   public chartElementId: string;
 
   private chart: any;
@@ -47,12 +47,18 @@ export class LineChartComponent implements OnInit, OnChanges, AfterViewInit, OnD
       this.chart = c3.generate(merge.recursive(
         {
           bindto: `#${this.chartElementId}`,
+          data: {
+            type: 'bar',
+            colors: this.assignColorsToColumns(this.chartData.data.columns),
+          },
           axis: {
             y: {
-              inner: true,
+              padding: {
+                top: 10,
+              },
             },
             x: {
-              height: 50,
+              height: 20,
             },
           },
           grid: {
@@ -63,9 +69,8 @@ export class LineChartComponent implements OnInit, OnChanges, AfterViewInit, OnD
           legend: {
             padding: 18,
           },
-          data: {
-            type: 'spline',
-            colors: this.assignColorsToColumns(this.chartData.data.columns),
+          padding: {
+            bottom: 24,
           },
         },
         this.chartData,
