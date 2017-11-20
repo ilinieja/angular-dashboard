@@ -9,6 +9,7 @@ import leaflet from 'leaflet/dist/leaflet';
 export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
   public map: any;
   public mapInitPromise: Promise<any>;
+  public loading: boolean = true;
 
   constructor(private elementRef: ElementRef) {
   }
@@ -44,6 +45,10 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
 
         resolve();
       });
+    });
+
+    this.mapInitPromise.then(() => {
+      this.loading = false;
     });
   }
 

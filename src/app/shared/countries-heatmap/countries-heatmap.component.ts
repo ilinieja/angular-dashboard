@@ -53,7 +53,9 @@ export class CountriesHeatmapComponent extends MapComponent implements OnChanges
 
   ngAfterViewInit() {
     super.ngAfterViewInit();
+
     this.mapInitPromise.then(() => {
+      this.loading = true;
 
       // tslint:disable-next-line
       const geoJsonUrl = 'https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson';
@@ -107,6 +109,7 @@ export class CountriesHeatmapComponent extends MapComponent implements OnChanges
 
             this.map.setMaxBounds(this.geoJsonLayer.getBounds());
             this.map.setMinZoom(2);
+            this.loading = false;
           });
         });
     });
