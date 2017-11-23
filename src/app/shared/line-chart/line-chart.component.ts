@@ -6,6 +6,7 @@ import {
   SimpleChanges,
   OnDestroy,
   AfterViewInit,
+  ElementRef,
 } from '@angular/core';
 import c3 from 'c3';
 import justRandomstring  from 'just.randomstring';
@@ -27,7 +28,11 @@ export class LineChartComponent implements OnInit, OnChanges, AfterViewInit, OnD
 
   @Input() private chartData: any;
 
-  constructor() {
+  @Input() private minEntryWidth: number = 60;
+
+  @Input() private minEntriesNumber: number = 5;
+
+  constructor(private elementRef: ElementRef) {
     this.chartElementId = justRandomstring(8, 'uppercases_lowercases');
   }
 
@@ -36,11 +41,24 @@ export class LineChartComponent implements OnInit, OnChanges, AfterViewInit, OnD
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.chart && changes.chartData.currentValue) {
-      this.chart.flush();
+      this.chart.unload();
+      this.chart.load(changes.chartData.currentValue.data);
     }
   }
 
   ngAfterViewInit() {
+    const elementWidth =
+      this.elementRef.nativeElement.querySelector(`#${this.chartElementId}`).offsetWidth;
+
+    let iterations = 0;
+    while (elementWidth / this.chartData.data.columns[0].length - 1 < this.minEntryWidth
+    && this.chartData.data.columns[0].length - 1 > this.minEntriesNumber
+    && iterations <= 1000) {
+      // first element is legend item, we shouldn't remove it
+      this.chartData.data.columns.forEach(column => column.splice(1, 1));
+      iterations += 1;
+    }
+
     // with flex layout, chart container can be not grown on afterViewInit
     // timeout needed to run init only after flex layout finished
     setTimeout(() => {

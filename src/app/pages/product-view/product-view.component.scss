@@ -63,8 +63,13 @@ $card-min-width: 470px;
   }
 }
 
-@media (max-width: $card-min-width * 1.5) {
+@media (max-width: 1024px) {
   .card, .card.purchases-by-device, .card.reviews {
     min-width: calc(100% - #{$host-padding * 2});
+  }
+
+  .card.purchases-by-device {
+    max-width: initial;
+    flex-grow: 1;
   }
 }

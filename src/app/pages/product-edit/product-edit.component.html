@@ -1,3 +1,47 @@
-<p>
-  product-edit works!
-</p>
+<div class="content">
+  <div class="image-container mat-elevation-z3">
+    <div
+      class="image"
+      [ngStyle]="{'background-image': productImageUrl ? 'url(' + productImageUrl + ')' : 'none'}"
+    ></div>
+  </div>
+  <button mat-raised-button color="primary" class="image-control" (click)="changeImage()">Change</button>
+  <form class="form" [formGroup]="productForm" (submit)="productForm.valid && saveProduct($event)" novalidate>
+    <div class="form-row">
+      <mat-form-field class="form-input">
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-input">
+        <textarea
+          matInput
+          placeholder="Description"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-input small">
+        <input
+          type="number"
+          matInput
+          placeholder="Price"
+          formControlName="price"
+        >
+      </mat-form-field>
+      <mat-form-field class="form-input small">
+        <input
+          type="number"
+          matInput
+          placeholder="Stock"
+          formControlName="stock"
+        >
+      </mat-form-field>
+    </div>
+    <div class="form-row top-margin">
+      <button mat-raised-button type="button" class="form-button" (click)="initForm()">Cancel</button>
+      <button mat-raised-button type="submit" color="primary" class="form-button" [disabled]="!productForm.valid">Save</button>
+    </div>
+  </form>
+</div>

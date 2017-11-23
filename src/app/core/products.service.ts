@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { products } from './products-mock';
+import { productStatsMock } from './product-stats.mock';
 
 @Injectable()
 export class ProductsService {
@@ -23,6 +24,24 @@ export class ProductsService {
       });
 
       observer.next(product || null);
+    });
+  }
+
+  public saveProduct(productData, id?) {
+    return new Observable((observer) => {
+      if (!id) {
+        productData.id = this.products.length;
+        this.products.unshift(Object.assign(productData, productStatsMock));
+        observer.next(productData.id);
+        return;
+      }
+
+      const product = this.products.find((product) => {
+        return product.id === id;
+      });
+
+      Object.assign(product, productData);
+      observer.next(product.id);
     });
   }
 }

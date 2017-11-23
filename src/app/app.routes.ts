@@ -11,6 +11,11 @@ import { ProductEditComponent } from './pages/product-edit/product-edit.componen
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'products',
+    pathMatch: 'full',
+  },
+  {
+    path: 'products',
     component: ProductsListComponent,
     canActivate: [AuthGuard],
   },

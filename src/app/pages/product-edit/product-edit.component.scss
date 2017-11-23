@@ -1,0 +1,69 @@
+@import '../../shared/vars';
+@import '../../../theme';
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  min-width: 320px;
+  max-width: 480px;
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: map-get($mat-grey, 100);
+    border-radius: 2px;
+    overflow: hidden;
+
+    .image {
+      width: 180px;
+      height: 180px;
+      background-position: center;
+      background-size: 130%;
+      background-repeat: no-repeat;
+      transition: $common-transition;
+    }
+  }
+
+  .image-control {
+    margin-top: 16px;
+  }
+
+  .form {
+    width: 100%;
+
+    .form-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &.top-margin {
+        margin-top: 18px;
+      }
+
+      .form-input {
+        flex-grow: 1;
+        margin: 0 8px;
+
+        &.small {
+          max-width: 104px;
+        }
+      }
+
+      .form-button {
+        margin: 0 8px;
+        width: 150px;
+      }
+    }
+  }
+}
