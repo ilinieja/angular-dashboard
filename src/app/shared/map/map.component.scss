@@ -2,6 +2,10 @@
   display: flex;
   height: 500px;
   position: relative;
+
+  // leaflet sets big z-indexes to its elements,
+  // need to prevent them from overlapping other elements
+  z-index: -1;
 }
 
 .map {
