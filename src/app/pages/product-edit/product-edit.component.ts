@@ -12,10 +12,10 @@ import { ProductsService } from '../../core/products.service';
 })
 export class ProductEditComponent implements OnInit {
   private routeParamsSub: Subscription;
-  private productImageUrl: string;
   private product: any;
 
   public productForm: FormGroup;
+  public productImageUrl: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -38,7 +38,7 @@ export class ProductEditComponent implements OnInit {
     });
   }
 
-  private initForm() {
+  public initForm() {
     this.productForm = this.formBuilder.group({
       name: [(this.product && this.product.name) || null, [Validators.required]],
       description: [(this.product && this.product.description) || null, [Validators.nullValidator]],
