@@ -5,7 +5,7 @@
 
   // leaflet sets big z-indexes to its elements,
   // need to prevent them from overlapping other elements
-  z-index: -1;
+  z-index: 0;
 }
 
 .map {

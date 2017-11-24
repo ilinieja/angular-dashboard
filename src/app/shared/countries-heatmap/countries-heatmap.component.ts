@@ -10,8 +10,7 @@ import {
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
-import leaflet from 'leaflet/dist/leaflet';
+import * as leaflet from 'leaflet/dist/leaflet';
 
 import { MapComponent } from '../map/map.component';
 

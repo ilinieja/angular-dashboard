@@ -12,4 +12,14 @@ export class Utils {
   static setLocalStorageItem(key, value) {
     localStorage.setItem(key, value);
   }
+
+  static generateRandomString(length) {
+    let text = '';
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+    for (let i = 0; i < length; i += 1)
+      text += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+
+    return text;
+  }
 }

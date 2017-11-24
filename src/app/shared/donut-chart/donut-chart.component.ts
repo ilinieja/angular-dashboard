@@ -7,11 +7,11 @@ import {
   OnDestroy,
   AfterViewInit,
 } from '@angular/core';
-import c3 from 'c3';
-import justRandomstring  from 'just.randomstring';
-import merge from 'merge';
+import * as c3 from 'c3';
+import * as merge from 'merge';
 
 import { CHART_COLORS } from '../constants';
+import { Utils } from '../../core/utils';
 
 @Component({
   selector: 'app-donut-chart',
@@ -28,7 +28,7 @@ export class DonutChartComponent implements OnInit, OnChanges, AfterViewInit, On
   @Input() private chartData: any;
 
   constructor() {
-    this.chartElementId = justRandomstring(8, 'uppercases_lowercases');
+    this.chartElementId = Utils.generateRandomString(8);
   }
 
   ngOnInit() {

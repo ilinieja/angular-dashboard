@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import merge from 'merge';
+import * as merge from 'merge';
 
 import { ProductsService } from '../../core/products.service';
 

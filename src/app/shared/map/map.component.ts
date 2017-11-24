@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
-import leaflet from 'leaflet/dist/leaflet';
+import * as leaflet from 'leaflet/dist/leaflet';
 
 @Component({
   selector: 'app-map',
