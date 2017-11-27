@@ -4,7 +4,7 @@ Data dashboard frontend with some useful initial setup and ready-to-use componen
 ## Demo
 Available online [here](https://starter-angular-dashboard.herokuapp.com)
 
-![Demo](https://image.ibb.co/fkqUXm/ezgif_com_optimize.gif)
+![Demo](https://image.ibb.co/kr9jyR/ezgif_com_optimize.gif)
 
 ## Stack
 * [AngularCLI](https://github.com/angular/angular-cli)
