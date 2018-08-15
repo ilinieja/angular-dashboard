@@ -10,6 +10,7 @@
 
 # IDEs and editors
 /.idea
+starter-angular-dashboard.iml
 .project
 .classpath
 .c9/

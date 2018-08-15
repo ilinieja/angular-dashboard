@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MetrikaModule } from 'ng-yandex-metrika';
 
 import { environment } from '../environments/environment';
 
@@ -59,6 +60,16 @@ import { CountriesHeatmapComponent } from './shared/countries-heatmap/countries-
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
+
+    MetrikaModule.forRoot(
+      {
+        id: 49982731,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+      },
+    ),
 
     AuthModule,
     AppRoutesModule,

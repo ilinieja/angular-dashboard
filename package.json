@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "serve": "ng serve",
+    "serve": "ng serve --port=4203",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -36,6 +36,7 @@
     "kerberos": "~0.0.x",
     "leaflet": "^1.2.0",
     "merge": "^1.2.0",
+    "ng-yandex-metrika": "^2.1.1",
     "parse": "^1.10.0",
     "rxjs": "^5.4.2",
     "typescript": "~2.3.3",
